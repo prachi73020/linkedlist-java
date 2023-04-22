@@ -18,7 +18,8 @@ public static class Node {
             temp.next=null;
             if(size==0)
             {
-            head=temp=tail;
+            head=temp;
+            tail=temp;
             }
             else
             {
@@ -43,11 +44,13 @@ public static class Node {
         }
         
     }
-}
+
     public static void main(String[] args)
     {
         LinkedList list=new LinkedList();
         list.addLast(23);
+        list.addLast(24);
+        list.addLast(25);
         list.display();
     }
 }
