@@ -163,6 +163,31 @@ public static class Node {
                 size--;
             }
         }
+       private Node GetNode(int idx)
+        {
+            Node temp=head;
+            for(int i=0;i<idx;i++)
+            {
+                temp=temp.next;
+            }
+            return temp;
+        }
+        void Reverse()
+        {
+            int l=0;
+            int R=size-1;
+            while(l<R)
+            {
+            Node left= GetNode(l);
+            Node right= GetNode(R);
+            int temp=left.data;
+            left.data=right.data;
+            right.data=temp;
+            
+            l++;
+            R--;
+            }
+        }
     
     }    
     public static void main(String[] args)
