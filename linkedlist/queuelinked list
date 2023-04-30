@@ -1,0 +1,115 @@
+import java.util.*;
+public class Main 
+{
+    public static class Node
+    {
+        int data;
+        Node next;
+    }
+    public static class LinkedList
+    {
+        Node head;
+        Node tail;
+        int size;
+        
+        void addlast(int val)
+        {
+            Node temp=new Node();
+            temp.data=val;
+            temp.next=null;
+            if(size==0)
+            {
+                head=tail=temp;
+            }
+            else
+            {
+                tail.next=temp;
+                tail=temp;
+            }
+            size++;
+        }
+        void display()
+        {
+            Node temp=head;
+            while(temp!=null)
+            {
+                System.out.print(temp.data+"->");
+                temp=temp.next;
+            }
+        }
+        void removefirst()
+        {
+            if(size==0)
+            {
+                System.out.println("list is empty");
+            }
+            if(size==1)
+            {
+                head=tail=null;
+                size=0;
+            }
+            else{
+                head=head.next;
+                size--;
+            }
+        }
+        int getfirst()
+        {
+            if(size==0)
+            {
+                System.out.println("list is empty");
+                return -1;
+            }
+            else
+            {
+                return head.data;
+            }
+        }
+        int size()
+        {
+            return size;
+        }
+        void add(int val)
+        {
+            addlast(val);
+        }
+        void remove()
+        {
+            if(size==0)
+            {
+                 System.out.println("underflow");
+            }
+            else{
+                removefirst();
+            }
+        }
+        int peek()
+        {
+            if(size==0)
+            {
+                 System.out.println("overflow");
+                 return -1;
+            }
+            else
+            {
+                return getfirst();
+            }
+        }
+    }
+    public static void main(String []args)
+        {
+            LinkedList l1=new LinkedList();
+             l1.addlast(1);
+             l1.addlast(2);
+             l1.addlast(3);
+             l1.addlast(4);
+             l1.addlast(5);
+             l1.add(6);
+             l1.peek();
+            // l1.remove();
+            System.out.println("value is"+l1.peek());
+           // System.out.println("value is"+l1.getfirst());
+            //l1.removefirst();
+            l1.display();
+        }
+}
