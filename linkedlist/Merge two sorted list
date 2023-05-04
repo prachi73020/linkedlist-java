@@ -36,7 +36,9 @@ public class Main
                 System.out.print(temp.data+"->");
                 temp=temp.next;
             }
+             System.out.println();
         }
+       
     }
     public static LinkedList mergetwosortedlinkedlist(LinkedList l1,LinkedList l2)
 {
@@ -79,7 +81,7 @@ public static void main(String []args)
              l1.addlast(7);
              l1.addlast(9);
             l1.display();
-            
+        
              LinkedList l2=new LinkedList();
              l2.addlast(2);
              l2.addlast(4);
@@ -88,7 +90,8 @@ public static void main(String []args)
              l2.addlast(10);
             l2.display();
             
-           // System.out.println("sorted list are:"+mergetwosortedlinkedlist(l1.display(),l2.display()));
+           LinkedList l= mergetwosortedlinkedlist(l1,l2);
+           l.display();
         }
         
         
