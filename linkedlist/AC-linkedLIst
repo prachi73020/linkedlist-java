@@ -1,0 +1,61 @@
+class Main
+{
+    Node Head;
+    private int size;
+    
+    Main()
+    {
+        size=0;
+    }
+    
+    public class Node
+    {
+        String data;
+        Node next;
+        
+        Node(String data)
+        {
+            this.data=data;
+            this.next=null;
+            size++;
+        }
+    }
+    
+    public void addFrist(String data)
+    {
+        Node newNode=new Node(data);
+        newNode.next=Head;
+        Head=newNode;
+    }
+    public void addLast(String data)
+    {
+        Node newNode=new Node(data);
+        if(Head==null)
+        {
+            Head=newNode;
+            return;
+        }
+        Node lastNode=Head;
+        while(lastNode.next!=null)
+        {
+            lastNode=lastNode.next;
+        }
+        lastNode.next=newNode;
+    }
+    public void printList()
+    {
+        Node currNode=Head;
+        while(currNode!=null)
+        {
+            System.out.print(currNode.data+" ->");
+            currNode=currNode.next;
+        }
+        System.out.println("null");
+    }
+    public static void main(String[]args)
+    {
+        Main List=new Main ();
+        List.addLast("is");
+        List.printList();
+    }
+}
